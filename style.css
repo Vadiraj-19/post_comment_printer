@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    
+}
+
+#header {
+    color: rgba(255, 255, 255, 0.845);
+    
+    text-shadow: 2px 4px rgb(65, 68, 68);
+    
+    position: absolute;
+    top:40px;
+    left:40px;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+
+    
+    
+}
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+    
+}
+
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0);
+}
+main{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+    width: 50%;
+}
+#button {
+    padding: 10px 20px;
+    background: linear-gradient(to right, rgb(85, 84, 96) 50%, black 150%);
+    border: 2px solid black;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    border-radius: 10px;
+    font-size: large;
+    font-weight: 700;
+    color: black; /* Text color for better visibility */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3), 4px 5px 4px rgb(45, 45, 45); /* 3D shadow effect */
+    transform: perspective(900px) translateZ(0); /* Give a flat 3D perspective */
+}
+
+/* Hover effect for 3D button */
+#button:hover {
+    transform: perspective(800px) translateZ(10px) rotateX(2deg) rotateY(-5deg)rotateZ(-1deg) scale(1.1); /* 3D tilt effect */
+    box-shadow: 3px 3px 5px rgb(90, 89, 90), 6px 6px 5px rgb(72, 72, 72); /* Enhanced shadow on hover */
+    background: linear-gradient(to right, rgb(12, 9, 9), rgb(82, 73, 83) 150%); /* Smooth gradient transition */
+    border-color: rgb(235, 224, 224); /* Change border color */
+    color: white; /* Change text color */
+    animation: btncolor 0.8s linear infinite; /* Background animation */
+}
+
+/* Animation for gradient background on hover */
+@keyframes btncolor {
+    0%, 100% {
+        background-color: red;
+    }
+    50% {
+        background-color: black;
+    }
+}
+
+#container {
+    margin-top: 20px;
+    padding: 10px;
+   
+    overflow: auto;
+    
+    color: white;
+    border-right: 1px solid white;
+    animation: blink 0.9s steps(2,start) 0s infinite normal forwards;
+    
+    
+    
+}
+::selection{
+    background-color: rgba(255, 255, 255, 0.591) !important;
+    color:rgb(22, 22, 22);
+}
